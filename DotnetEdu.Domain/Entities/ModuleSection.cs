@@ -8,5 +8,5 @@ public class ModuleSection : Auditable
     public string Name { get; set; }
     public string Description { get; set; }
     public ModuleSection Parent { get; set; } // Optional parent for sub-section structure
-    public IEnumerable<CourseLesson> Lessons { get; set; }
+    public IEnumerable<SectionLesson> Lessons { get; set; }
 }

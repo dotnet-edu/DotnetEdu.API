@@ -1,7 +1,9 @@
-﻿namespace DotnetEdu.Domain.Entities;
+﻿using DotnetEdu.Domain.Commons;
+
+namespace DotnetEdu.Domain.Entities;
 
 // Question types for quizzes
-public class QuizQuestion
+public class QuizQuestion : Auditable
 {
     public string QuestionText { get; set; }
     public IEnumerable<string> Options { get; set; }
