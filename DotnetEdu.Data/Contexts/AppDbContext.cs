@@ -12,7 +12,7 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<Course> Courses { get; set; }
     public DbSet<CourseModule> CourseModules { get; set; }
     public DbSet<ModuleSection> ModuleSections { get; set; }
-    public DbSet<CourseLesson> Lessons { get; set; }
+    public DbSet<CourseLesson> CourseLessons { get; set; }
 
     public DbSet<LessonArticle> LessonsArticles { get; set; }
     public DbSet<LessonQuiz> LessonsQuizes { get; set; }
