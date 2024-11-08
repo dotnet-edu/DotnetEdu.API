@@ -1,27 +1,12 @@
-﻿using DotnetEdu.Domain.Commons;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 
 namespace DotnetEdu.Domain.Entities;
 
+// User entity extending IdentityUser for authentication and user management
 public class User : IdentityUser
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public DateTime DateOfBIrth { get; set; }
+    public DateTime DateOfBirth { get; set; }
 }
-
-public class Course : Auditable
-{
-    public string Name { get; set; }
-    public string Description { get; set; }
-
-    public IEnumerable<Section> Sections { get; set; }
-}
-public class Section
-{
-    public string Name { get; set; }
-
-}
-
-
-
