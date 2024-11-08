@@ -10,6 +10,9 @@ public class SectionLesson : Auditable
     public string Name { get; set; }
     public string Description { get; set; }
 
+    public long ModuleSectionId { get; set; }
+    public ModuleSection ModuleSection { get; set; }
+
     // Navigation properties for different lesson types
     public LessonArticle Article { get; set; }
     public LessonQuiz Quiz { get; set; }

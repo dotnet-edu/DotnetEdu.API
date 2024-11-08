@@ -7,5 +7,9 @@ public class Course : Auditable
 {
     public string Name { get; set; }
     public string Description { get; set; }
+
+    public long? CourseCategoryId { get; set; }
+    public Category CourseCategory { get; set; }
+
     public IEnumerable<CourseModule> Modules { get; set; }
 }
