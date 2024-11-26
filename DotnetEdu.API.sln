@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetEdu.Data", "DotnetEdu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetEdu.Domain", "DotnetEdu.Domain\DotnetEdu.Domain.csproj", "{E1B34BF1-9C4F-4CDB-A837-148FCACF713F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetEdu.Bussiness", "DotnetEdu.Bussiness\DotnetEdu.Bussiness.csproj", "{D24D3941-7BCD-4B64-84E6-F5AC3C944B88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetEdu.Service", "DotnetEdu.Bussiness\DotnetEdu.Service.csproj", "{D24D3941-7BCD-4B64-84E6-F5AC3C944B88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
