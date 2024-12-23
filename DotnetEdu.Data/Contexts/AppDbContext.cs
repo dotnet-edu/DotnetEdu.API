@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DotnetEdu.Data.Contexts;
 
-public class AppDbContext : IdentityDbContext<User>
+public class AppDbContext : IdentityDbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -18,5 +18,4 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<Exam> Exams { get; set; }
     public DbSet<ExamQuestion> ExamQuestions { get; set; }
     public DbSet<QuizQuestion> QuizQuestions { get; set; }
-
 }
