@@ -4,17 +4,17 @@ using DotnetEdu.Domain.Enums;
 namespace DotnetEdu.Domain.Entities;
 
 // Lessons representing learning content, with various types like articles, quizzes, and exams
-public class SectionLesson : Auditable
+public class Lesson : Auditable
 {
     public LessonType Type { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
 
-    public long ModuleSectionId { get; set; }
-    public ModuleSection ModuleSection { get; set; }
+    public long SectionId { get; set; }
+    public Section Section { get; set; }
 
     // Navigation properties for different lesson types
-    public LessonArticle Article { get; set; }
-    public LessonQuiz Quiz { get; set; }
-    public LessonExam Exam { get; set; }
+    public Article Article { get; set; }
+    public Quiz Quiz { get; set; }
+    public Exam Exam { get; set; }
 }

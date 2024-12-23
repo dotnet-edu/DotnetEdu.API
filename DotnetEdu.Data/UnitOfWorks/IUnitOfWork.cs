@@ -8,13 +8,13 @@ public interface IUnitOfWork : IDisposable
 {
     IRepository<Category> Categories { get; }
     IRepository<Course> Courses { get; }
-    IRepository<CourseModule> CourseModules { get; }
-    IRepository<ModuleSection> ModuleSections { get; }
-    IRepository<SectionLesson> SectionLessons { get; }
+    IRepository<Module> CourseModules { get; }
+    IRepository<Section> ModuleSections { get; }
+    IRepository<Lesson> SectionLessons { get; }
 
-    IRepository<LessonArticle> LessonArticles { get; }
-    IRepository<LessonQuiz> LessonQuiz { get; }
-    IRepository<LessonExam> LessonExam { get; }
+    IRepository<Article> LessonArticles { get; }
+    IRepository<Quiz> LessonQuiz { get; }
+    IRepository<Exam> LessonExam { get; }
 
     IRepository<ExamQuestion> ExamQuestions { get; }
     IRepository<QuizQuestion> QuizQuestions { get; }
@@ -30,13 +30,13 @@ public class UnitOfWord : IDisposable
 
     public IRepository<Category> Categories { get; }
     public IRepository<Course> Courses { get; }
-    public IRepository<CourseModule> CourseModule { get; }
-    public IRepository<ModuleSection> ModuleSection { get; }
-    public IRepository<SectionLesson> SectionLesson { get; }
+    public IRepository<Module> CourseModule { get; }
+    public IRepository<Section> ModuleSection { get; }
+    public IRepository<Lesson> SectionLesson { get; }
 
-    public IRepository<LessonArticle> LessonArticles { get; }
-    public IRepository<LessonQuiz> LessonQuiz { get; }
-    public IRepository<LessonExam> LessonExam { get; }
+    public IRepository<Article> LessonArticles { get; }
+    public IRepository<Quiz> LessonQuiz { get; }
+    public IRepository<Exam> LessonExam { get; }
 
     public IRepository<ExamQuestion> ExamQuestions { get; }
     public IRepository<QuizQuestion> QuizQuestions { get; }

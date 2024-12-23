@@ -3,7 +3,7 @@
 namespace DotnetEdu.Domain.Entities;
 
 // Modules within a course, containing sections
-public class CourseModule : Auditable
+public class Module : Auditable
 {
     public string Name { get; set; }
     public string Description { get; set; }
@@ -11,5 +11,5 @@ public class CourseModule : Auditable
     public long CourseId { get; set; }
     public Course Course { get; set; }
 
-    public IEnumerable<ModuleSection> Sections { get; set; }
+    public IEnumerable<Section> Sections { get; set; }
 }
