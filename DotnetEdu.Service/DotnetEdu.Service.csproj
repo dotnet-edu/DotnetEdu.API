@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DotnetEdu.Data\DotnetEdu.Data.csproj" />
     <ProjectReference Include="..\DotnetEdu.Domain\DotnetEdu.Domain.csproj" />
   </ItemGroup>
 

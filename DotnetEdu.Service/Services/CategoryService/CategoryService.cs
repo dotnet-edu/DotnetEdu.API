@@ -6,7 +6,7 @@ namespace DotnetEdu.Service.Services.CategoryService;
 
 public class CategoryService(IUnitOfWork unitOfWork) : ICategoryService
 {
-    public async ValueTask<Category> CreateCategory(Category category)
+    public async ValueTask<Category> CreateAsync(Category category)
     {
         var existCategory = await unitOfWork.Categories.SelectAsync(
             expression: c => c.Name == category.Name && !c.IsDeleted);
@@ -14,36 +14,54 @@ public class CategoryService(IUnitOfWork unitOfWork) : ICategoryService
         if (existCategory != null)
             throw new AlreadyExistException($"Category with name {category.Name}");
 
+
         var created = await unitOfWork.Categories.InsertAsync(category);
         await unitOfWork.SaveAsync();
 
         return created;
     }
 
-    public async ValueTask<bool> DeleteCategory(long id)
+    public async ValueTask<bool> DeleteAsync(long id)
     {
         var existsCategory = await unitOfWork.Categories.SelectAsync(
             expression: c => c.Id == id && !c.IsDeleted)
             ?? throw new NotFoundException("Category is not found");
 
+        existsCategory.IsDeleted = true;
+        existsCategory.DeletedAt = DateTime.UtcNow;
         await unitOfWork.Categories.DeleteAsync(existsCategory);
+
         await unitOfWork.SaveAsync();
 
         return true;
     }
 
-    public ValueTask<Category> GetAllCategories()
+    public ValueTask<Category> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public ValueTask<Category> GetCategory(long id)
+    public async ValueTask<Category> GetAsync(long id)
     {
-        throw new NotImplementedException();
+        var existsCategory = await unitOfWork.Categories.SelectAsync(
+            expression: c => c.Id == id && !c.IsDeleted)
+            ?? throw new NotFoundException("Category is not found");
+
+        return existsCategory;
     }
 
-    public ValueTask<Category> UpdateCategory(long id, Category category)
+    public async ValueTask<Category> UpdateAsync(long id, Category category)
     {
-        throw new NotImplementedException();
+        var existsCategory = await unitOfWork.Categories.SelectAsync(
+            expression: c => c.Id == id && !c.IsDeleted)
+            ?? throw new NotFoundException("Category is not found");
+
+        existsCategory.Name = category.Name;
+        existsCategory.UpdatedAt = DateTime.UtcNow;
+
+        var updated = await unitOfWork.Categories.UpdateAsync(existsCategory);
+        await unitOfWork.SaveAsync();
+
+        return updated;
     }
 }

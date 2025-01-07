@@ -1,4 +1,4 @@
-using DotnetEdu.Data.Contexts; // Replace with your actual namespace
+using DotnetEdu.Data.Contexts;
 using DotnetEdu.Domain.Entities;
 using DotnetEdu.Domain.Models.Login;
 using Microsoft.AspNetCore.Identity;

@@ -17,4 +17,6 @@ public interface IUnitOfWork : IDisposable
 
     IRepository<ExamQuestion> ExamQuestions { get; }
     IRepository<QuizQuestion> QuizQuestions { get; }
+
+    ValueTask<bool> SaveAsync();
 }

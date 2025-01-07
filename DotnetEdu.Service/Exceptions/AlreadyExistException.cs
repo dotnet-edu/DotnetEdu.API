@@ -1,6 +1,6 @@
 ﻿namespace DotnetEdu.Service.Exceptions;
 
-public class AlreadyExistException
+public class AlreadyExistException : Exception
 {
     public AlreadyExistException() { }
     public AlreadyExistException(string message) : base(message) { }
