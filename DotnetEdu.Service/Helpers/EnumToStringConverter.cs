@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace DotnetEdu.Service.Helpers;
 
